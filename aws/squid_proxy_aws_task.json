@@ -1,0 +1,19 @@
+{
+  "family": "squid_proxy",
+  "containerDefinitions": [
+    {
+      "name": "squid_proxy",
+      "image": "042520414822.dkr.ecr.ap-northeast-1.amazonaws.com/squid-proxy",
+      "memoryReservation": 100,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "squid_proxy",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "squid_proxy"
+        }
+      },
+      "essential": true
+    }
+  ]
+}
