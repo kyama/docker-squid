@@ -2,13 +2,13 @@
   "family": "squid_proxy",
   "volumes": [
     {"name":"config",
-     "host": {"sourcePath":"conf"}
+     "host": {"sourcePath":"/home/conf"}
     },
     {"name":"cache",
      "host":{"sourcePath":"/srv/docker/squid/cache"}
     },
-    {"name":"root",
-     "host":{"sourcePath":"/root"}
+    {"name":"home",
+     "host":{"sourcePath":"/home"}
     }
     ],
   "containerDefinitions": [
@@ -40,6 +40,10 @@
 	{
 	  "sourceVolume": "config",
 	  "containerPath": "/etc/squid"
+	},
+	{
+	  "sourceVolume": "home",
+	  "containerPath": "/home"
 	}
 	  ]
     }
