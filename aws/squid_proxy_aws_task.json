@@ -20,7 +20,13 @@
 	  "protocol": "tcp"
 	}
       ],
-      "essential": true
+      "essential": true,
+      "mountPoints": [
+	{
+	  "sourceVolume": "./squid.conf",
+	  "containerPath": "/etc/squid/squid.conf"
+	}
+	  ]
     }
   ]
 }
