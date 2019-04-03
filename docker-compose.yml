@@ -5,5 +5,5 @@ Squid:
   volumes:
     - /srv/docker/squid/cache:/var/spool/squid
     - ./:/root
-    - ./squid.conf:/etc/squid/squid.conf
+    - ./conf:/etc/squid
   restart: always
