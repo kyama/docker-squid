@@ -13,5 +13,9 @@ RUN apt-get update \
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
+WORKDIR /home
+
+COPY . /home/
+
 EXPOSE 3128/tcp
 ENTRYPOINT ["/sbin/entrypoint.sh"]
