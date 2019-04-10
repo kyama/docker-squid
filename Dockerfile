@@ -13,7 +13,11 @@ RUN apt-get update \
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
+RUN apt-get update && apt-get install -y apache2-utils
+
 COPY conf/squid.conf /etc/squid/
+#https://stackoverflow.com/questions/3297196/how-to-set-up-a-squid-proxy-with-basic-username-and-password-authentication
+COPY conf/passwords  /etc/squid/
 
 EXPOSE 3128/tcp
 ENTRYPOINT ["/sbin/entrypoint.sh"]
